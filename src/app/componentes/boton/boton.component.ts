@@ -21,7 +21,11 @@ export class BotonComponent implements OnInit {
   }
 
   //funciones
-  contadorBoton = function () {
+  contadorBoton = function (numero) {
+    console.trace('Contador botón');
+    this.numero++;
+
+
 
   }
 
