@@ -1,54 +1,40 @@
-<!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+<h1>{{title}} </h1>
 
-    <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Navbar</a>
+<h2>Listado de productos</h2>
 
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
-
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-
+<!--Listado-->
+<div class="row">
+    <div class="col-md-4">
+        <ul class="list-group">
+            <li *ngFor="let p of productos" (click)="seleccionarProducto(p)"
+                class="list-group-item {{(p==pSeleccionado)?'active':''}}">
+                <b>{{p.nombre}} </b> </li>
         </ul>
-        <!-- Links -->
-
-        <form class="form-inline">
-            <div class="md-form my-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            </div>
-        </form>
+        <!-- (tipoEvento) = nombreFuncion(parametro)-->
     </div>
-    <!-- Collapsible content -->
 
-</nav>
-<!--/.Navbar-->
-<h1>{{title}}</h1>
+    <div class="col-md-8">
+
+        <div class="card" style="width: 18rem; height: 20rem;">
+            <div class="card-body">
+                <span *ngIf="{{pSeleccionado.gluten}}" class="badge badge-success">Success</span>
+                <span *ngIf="{{! pSeleccionado.gluten}}" class="badge badge-danger">Sin gluten</span>
+                <h5 class="card-title text-center"><b>{{pSeleccionado.nombre | uppercase}}</b></h5>
+            </div>
+            <img class="card-img-top text-center" src="{{pSeleccionado.imagen}}" alt="Card image cap">
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{pSeleccionado.precio}} €</li>
+                <li class="list-group-item">{{pSeleccionado.categoria.nombre}}</li>
+                <li class="list-group-item">Histórico de precios</li>
+                <li *ngFor="let h of pSeleccionado.historico" class="list-group-item">{{h.fecha}} - {{h.precio}} €</li>
+            </ul>
+
+        </div>
+
+
+
+    </div>
+
+</div>
