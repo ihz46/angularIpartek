@@ -18,9 +18,10 @@
 
         <div class="card" style="width: 18rem; height: 20rem;">
             <div class="card-body">
+
+                <h5 class="card-title text-center"><b>{{pSeleccionado.nombre | uppercase}}</b></h5>
                 <span *ngIf="{{pSeleccionado.gluten}}" class="badge badge-success">Success</span>
                 <span *ngIf="{{! pSeleccionado.gluten}}" class="badge badge-danger">Sin gluten</span>
-                <h5 class="card-title text-center"><b>{{pSeleccionado.nombre | uppercase}}</b></h5>
             </div>
             <img class="card-img-top text-center" src="{{pSeleccionado.imagen}}" alt="Card image cap">
 
