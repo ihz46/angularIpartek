@@ -7,18 +7,25 @@ import { AppComponent } from './app.component';
 import { BotonComponent } from './componentes/boton/boton.component';
 import { PaginasComponent } from './paginas/paginas.component';
 import { ArraysComponent } from './paginas/arrays/arrays.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { ProductosComponent } from './paginas/productos/productos.component';
+import { InicioComponent } from './paginas/inicio/inicio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BotonComponent,
     PaginasComponent,
-    ArraysComponent
+    ArraysComponent,
+    NavbarComponent,
+    ProductosComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule, //Módulo para llamadas por HTTP
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

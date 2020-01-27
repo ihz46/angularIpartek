@@ -1,45 +1,6 @@
-<h1>{{title}} </h1>
+<app-navbar></app-navbar>
 
-<h2>Listado de productos</h2>
-
-
-
-<!--Listado-->
-<div class="row">
-    <div class="col-md-4">
-        <app-boton></app-boton>
-        <ul class="list-group">
-            <li *ngFor="let p of productos" (click)="seleccionarProducto(p)"
-                class="list-group-item {{(p==pSeleccionado)?'active':''}}">
-                <b>{{p.nombre}} </b> </li>
-        </ul>
-        <!-- (tipoEvento) = nombreFuncion(parametro)-->
-    </div>
-
-    <div class="col-md-8">
-
-        <div class="card" style="width: 18rem; height: 20rem;">
-            <div class="card-body">
-
-                <h5 class="card-title text-center"><b>{{pSeleccionado.nombre | uppercase}}</b></h5>
-
-            </div>
-            <img class="card-img-top text-center" src="{{pSeleccionado.imagen}}" alt="Card image cap">
-
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">{{pSeleccionado.precio}} €</li>
-                <li class="list-group-item">{{pSeleccionado.categoria.nombre}}</li>
-                <p class="list-group-item"><b>Histórico de precios</b></p>
-                <li *ngFor="let h of pSeleccionado.historico" class="list-group-item">{{h.fecha}} - {{h.precio}} €</li>
-            </ul>
-            <span *ngIf="pSeleccionado.gluten" class="badge badge-success">Con gluten</span>
-            <span *ngIf="! pSeleccionado.gluten" class="badge badge-danger">Sin gluten</span>
-
-
-        </div>
-
-
-
-    </div>
-
-</div>
+<main class="container pt-2">
+    <!-- MÓDULO de angular para siste ma de rutas o navegación-->
+    <router-outlet></router-outlet>
+</main>
