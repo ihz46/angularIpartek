@@ -23,7 +23,11 @@ export class BotonComponent implements OnInit {
   //funciones
   contadorBoton = function (numero) {
     console.trace('Contador botón');
-    this.numero++;
+    if (this.numero >= 0 && this.numero < 10) {
+      this.numero++;
+    } else {
+      this.numero--;
+    }
 
 
 
