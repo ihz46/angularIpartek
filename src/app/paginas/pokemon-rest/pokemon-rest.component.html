@@ -1,1 +1,20 @@
-<p>pokemon-rest works!</p>
+<h2>Busca un pokemon por su nombre</h2>
+<div class="row">
+    <div class="col-m2-4">
+        <div class="form-group">
+            <input type="text" class="input-text" id="nombre" placeholder="introduce el nombre">
+        </div>
+
+        <input type="button" class="btn-primary btn-block" value="Buscar" click="">
+
+    </div>
+    <div class="col-md-8">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{pokemon.imagen}}" alt="imagen del pokemon {{pokemon.nombre}}">
+            <div class="card-body">
+                <h5 class="card-title">{{pokemon.id}} - {{pokemon.nombre}}</h5>
+                <p class=" card-body"></p>
+            </div>
+        </div>
+    </div>
+</div>
