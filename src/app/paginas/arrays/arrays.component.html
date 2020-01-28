@@ -8,6 +8,25 @@
         </pre>
     </div>
     <div class="col">
-        <p>Precio total : <b></b></p>
+        <h5>Obtenemos datos específicos usando map, find, filter y reduce</h5>
+        <img src="https://i.imgur.com/EqIyF7E.png" width="450px" height="300px" alt="imagen map, reduce, find, filter">
+        <ul>
+            <li><b>Map: </b>Permite mapear una colección de manera que nos quedamos solo con lo que necesitemos
+                manipular. Por ejemplo si tenemos una colección de frutas y cada fruta tiene nombre y precio, para
+                calcular el total de precios, debemos hacer un map.</li>
+            <li><b>Filter:</b>Permite filtrar los objetos de una colección siguiendo un criterio. </li>
+            <li><b>Find:</b>Solo devuelve el primer objeto que coincida con la búsqueda </li>
+            <li><b>Reduce:</b>Permite reducir una colección. Por ejemplo en la colección de frutas, obtenemos solo la
+                lista de colores</li>
+        </ul>
+
+        <p>Precio total : <b>{{total}} €</b></p>
+        <p>Precio total con descuento : <b>{{totalDescuento}} €</b></p>
+        <p>Solo nombres frutas: <b>{{aSoloNombres}}</b></p>
+        <p>Frutas con descuento: <b>{{frutasConDescuento}}</b></p>
+        <p>Frutas con color amarillas: <b>{{frutasColorAmarillo}}</b></p>
+        <p>Precio total de las frutas amarillas: <b>{{precioTotalFrutasColorAmarillo}} €</b></p>
+        <p>Buscar la primera fruta verde <b>{{primeraFrutaVerde | json}}</b></p>
+        <p>Listado de colores de frutas <b>{{colores}}</b></p>
     </div>
 </div>

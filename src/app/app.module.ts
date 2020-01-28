@@ -10,6 +10,7 @@ import { ArraysComponent } from './paginas/arrays/arrays.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { ProductosComponent } from './paginas/productos/productos.component';
 import { InicioComponent } from './paginas/inicio/inicio.component';
+import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { InicioComponent } from './paginas/inicio/inicio.component';
     ArraysComponent,
     NavbarComponent,
     ProductosComponent,
-    InicioComponent
+    InicioComponent,
+    PokemonRestComponent
   ],
   imports: [
     BrowserModule,
