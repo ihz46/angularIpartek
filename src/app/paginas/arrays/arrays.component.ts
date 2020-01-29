@@ -75,6 +75,7 @@ export class ArraysComponent implements OnInit {
     this.aSoloNombres = this.frutas.map(el => el.nombre);
     //Frutas con descuento
     this.frutasConDescuento = this.frutas.filter(el => el.descuento > 0).map(el => el.nombre);
+
     //Frutas con color amarillo
     this.frutasColorAmarillo = this.frutas.filter(el => el.colores.includes('amarillo')).map(el => el.nombre);
 

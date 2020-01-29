@@ -11,6 +11,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { ProductosComponent } from './paginas/productos/productos.component';
 import { InicioComponent } from './paginas/inicio/inicio.component';
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.compon
   imports: [
     BrowserModule,
     HttpClientModule, //Módulo para llamadas por HTTP
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
 
   ],
   providers: [],
