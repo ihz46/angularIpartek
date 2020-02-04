@@ -4,6 +4,7 @@ import { InicioComponent } from './paginas/inicio/inicio.component';
 import { ArraysComponent } from './paginas/arrays/arrays.component';
 import { ProductosComponent } from './paginas/productos/productos.component';
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
+import { EstilosComponent } from './paginas/estilos/estilos.component';
 
 
 /**
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'arrays', component: ArraysComponent },
   { path: 'productos', component: ProductosComponent },
-  { path: 'pokemon', component: PokemonRestComponent }
+  { path: 'pokemon', component: PokemonRestComponent },
+  { path: 'estilos', component: EstilosComponent }
 
 ];
 

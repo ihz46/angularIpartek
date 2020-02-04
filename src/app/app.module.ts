@@ -12,6 +12,7 @@ import { ProductosComponent } from './paginas/productos/productos.component';
 import { InicioComponent } from './paginas/inicio/inicio.component';
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
 import { FormsModule } from '@angular/forms';
+import { EstilosComponent } from './paginas/estilos/estilos.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     ProductosComponent,
     InicioComponent,
-    PokemonRestComponent
+    PokemonRestComponent,
+    EstilosComponent
   ],
   imports: [
     BrowserModule,
