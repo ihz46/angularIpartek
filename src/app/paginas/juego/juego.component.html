@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col">
+        <label>Introduce tu nombre:</label>
+        <input [(ngModel)]="jugador" type="text">
+        <button (click)="comenzarJuego()">Jugar</button>
+    </div>
+
+
+    <!--cierre row-->
+
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div *ngIf="visible">
+            <button (click)="contarClicks()" id="boton">Haz click</button>
+        </div>
+    </div>
+    <div class="col">Puntuación {{puntos}}</div>
+    <div class="col">
+        <h3>Ranking</h3>
+        {{ranking}}
+    </div>
+</div>

@@ -13,6 +13,7 @@ import { InicioComponent } from './paginas/inicio/inicio.component';
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
 import { FormsModule } from '@angular/forms';
 import { EstilosComponent } from './paginas/estilos/estilos.component';
+import { JuegoComponent } from './paginas/juego/juego.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,14 @@ import { EstilosComponent } from './paginas/estilos/estilos.component';
     ProductosComponent,
     InicioComponent,
     PokemonRestComponent,
-    EstilosComponent
+    EstilosComponent,
+    JuegoComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule, //Módulo para llamadas por HTTP
     AppRoutingModule,
-    FormsModule
+    FormsModule //Módulo para utilizar formularios
 
   ],
   providers: [],

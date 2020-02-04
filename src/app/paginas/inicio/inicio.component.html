@@ -1,1 +1,24 @@
-<p>inicio works!</p>
+<h2>{{title}}</h2>
+<p>Ejemplo de propiedad simpre con [] y las variables sin llaves:</p>
+<p>La propiedad <code>hidden</code> es de Angular, también podríamos haber usado <code>ngIF</code></p>
+<button (click)="decirAdios()">Decir adiós</button>
+
+<p [hidden]="!visible">
+    Adiós con propiedad.
+</p>
+
+<p *ngIf="!visible">
+    Adiós con <code>*ngIf</code>.
+</p>
+<hr>
+<button (click)="contarClicks()">Haz Click</button>
+<p>{{numeroClicks}}</p>
+
+<div [class]="claseSeleccionada">COLOR que cambia al pursar botones</div>
+
+<button (click)="claseSeleccionada='rojo'">Color rojo</button>
+<button (click)="claseSeleccionada='verde'">Color verde</button>
+
+<p>Para usar banana in a box recordar importar el modulo de <code>FormsModule</code> en el app module</p>
+<label>Nombre: {{jugador}}</label>
+<input [(ngModel)]="jugador" type="text">

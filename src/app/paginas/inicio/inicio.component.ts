@@ -7,9 +7,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  //variables
+  numeroClicks: number;
+  title = 'Angular ';
+  visible = false;
+  jugador: string;
+
+  constructor() {
+    console.trace
+    this.numeroClicks = 0;
+    this.jugador = '';
+  }//constructor
+
 
   ngOnInit() {
-  }
 
-}
+  }//ngOnInit
+
+
+  decirAdios() {
+    console.trace('DecirAdios()')
+    this.visible = true;
+
+  }// decirAdios()
+
+  contarClicks() {
+    console.trace(' contarClicks() ')
+    this.numeroClicks++;
+    alert(this.numeroClicks + this.jugador);
+  }//contarClicks()
+
+
+}//InicioComponent
+
+
+
