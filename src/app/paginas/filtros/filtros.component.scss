@@ -1,0 +1,22 @@
+
+li{
+    display:flex;
+
+   
+
+    .observacion{
+        font-size:1rem;
+    }
+
+    .nombre{
+        text-decoration: underline;
+        font-size:3rem;
+    }
+
+    .circle{
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+       
+    }
+}
