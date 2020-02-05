@@ -1,1 +1,49 @@
-<p>directivas works!</p>
+<h2>Directivas</h2>
+
+<dl>
+    <dt>
+        Componentes:
+    </dt>
+    <dd>Directivas con una plantilla HTML</dd>
+    <dt>
+        Estructurales:
+    </dt>
+    <dd>Cambian el DOM, añadiendo o removiendo elementos. <code>*ngIf *ngFor</code></dd>
+    <dt>
+        Directivas de atributo:
+    </dt>
+    <dd>Cambian la apariencia de un elemento del DOM, por ejemplo <code>hidden</code></dd>
+</dl>
+
+<p>También podemos crear nuestras propias directivas utilizando el comando <code>ng g d nombreDirectiva</code></p>
+
+<p appHello colorTexto="white" colorFondo="orange">En esta etiqueta estamos usando nuestra directiva
+    <code>appHello</code></p>
+
+
+<p appHello="pink">En esta etiqueta estamos usando nuestra directiva <code>appHello</code></p>
+
+<h3>Directiva subrayado</h3>
+
+<p appSubrayado="red">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur velit pariatur, eos
+    obcaecati,
+    alias
+    deserunt itaque laborum blanditiis eius quae expedita rem voluptas. Sunt nihil perspiciatis, odio maiores eveniet
+    magnam?</p>
+<p [appSubrayado]="'green'">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, saepe cum quibusdam
+    unde
+    reprehenderit cumque, earum temporibus ex ipsam repudiandae provident harum ad laudantium repellendus dolorem alias,
+    dolore explicabo iusto?</p>
+<p [appSubrayado]="colorSeleccionado">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos expedita fuga quam
+    ullam praesentium est, officiis enim ex saepe quae. Ipsam iste quia placeat eveniet corporis mollitia, ad ab illo!
+</p>
+
+<h3>Selecciona un color</h3>
+
+<form>
+    <input type="radio" name="color" value="pink" (click)="colorSeleccionado='pink'">Rosa
+    <input type="radio" name="color" value="orange" (click)="colorSeleccionado='orange'">Naranja
+    <input type="radio" name="color" value="orange" (click)="colorSeleccionado='brown'">Marrón
+    <input type="color" name="color" [(ngModel)]="colorSeleccionado">Elige un color personalizado
+
+</form>
