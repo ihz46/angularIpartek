@@ -6,6 +6,8 @@ import { ProductosComponent } from './paginas/productos/productos.component';
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
 import { EstilosComponent } from './paginas/estilos/estilos.component';
 import { JuegoComponent } from './paginas/juego/juego.component';
+import { DirectivasComponent } from './paginas/directivas/directivas.component';
+import { FiltrosComponent } from './paginas/filtros/filtros.component';
 
 
 /**
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path: 'productos', component: ProductosComponent },
   { path: 'pokemon', component: PokemonRestComponent },
   { path: 'estilos', component: EstilosComponent },
-  { path: 'juego', component: JuegoComponent }
+  { path: 'juego', component: JuegoComponent },
+  { path: 'directivas', component: DirectivasComponent },
+  { path: 'filtros', component: FiltrosComponent }
 
 ];
 

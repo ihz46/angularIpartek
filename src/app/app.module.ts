@@ -14,6 +14,8 @@ import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.compon
 import { FormsModule } from '@angular/forms';
 import { EstilosComponent } from './paginas/estilos/estilos.component';
 import { JuegoComponent } from './paginas/juego/juego.component';
+import { DirectivasComponent } from './paginas/directivas/directivas.component';
+import { FiltrosComponent } from './paginas/filtros/filtros.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { JuegoComponent } from './paginas/juego/juego.component';
     InicioComponent,
     PokemonRestComponent,
     EstilosComponent,
-    JuegoComponent
+    JuegoComponent,
+    DirectivasComponent,
+    FiltrosComponent
   ],
   imports: [
     BrowserModule,

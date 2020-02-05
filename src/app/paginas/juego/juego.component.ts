@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BotonComponent } from 'src/app/componentes/boton/boton.component';
+import { Key } from 'protractor';
 
 @Component({
   selector: 'app-juego',
@@ -10,13 +12,14 @@ export class JuegoComponent implements OnInit {
   //variables
   jugador: string;
   puntos: number;
-  visible = false;
-  ranking = new Map();
+  visible: boolean;
+  ranking: Map<string, number>
 
   constructor() {
     this.jugador = '';
+    this.visible = false;
     this.puntos = 0;
-    this.ranking.set('', 0);
+    this.ranking = new Map<string, number>();
 
   }//fin constructor
 
@@ -25,28 +28,33 @@ export class JuegoComponent implements OnInit {
   }//fin ngOnInit()
 
   comenzarJuego() {
+    console.log('Entra en comenzar juego');
     this.visible = true;
+    setTimeout(() => {
+      console.log(this.visible);
+      this.visible = false;
+      this.puntos = 0;
+      this.jugador = '';
+    }, 2000);
 
   }//fin comenzarJuego();
 
   contarClicks() {
+    console.log('Entra en contarClicks');
     this.puntos++;
 
-    for (let value of this.ranking.values()) {
-      console.log(value);
-    }
-    console.log(this.jugador)
     this.ranking.set(this.jugador, this.puntos);
+  }
 
-  }//fin contarClicks();
-
-
-
+}//fin contarClicks();
 
 
 
 
 
 
-}
+
+
+
+
 

@@ -1,23 +1,48 @@
+<h1>Juego del CLICK</h1>
 <div class="row">
-    <div class="col">
-        <label>Introduce tu nombre:</label>
-        <input [(ngModel)]="jugador" type="text">
-        <button (click)="comenzarJuego()">Jugar</button>
+
+    <div class="col-md-6">
+        <label class="mr-2">Introduce tu nombre:</label>
+        <input [(ngModel)]="jugador" type="text" class="form-control mb-2">
+        <button (click)="comenzarJuego()" class="btn bg-primary btn-block">Jugar</button>
+        <div *ngIf="visible" class="mt-4">
+            <button (click)="contarClicks()" class="btn btn-block bg-danger" id="boton">Haz click</button>
+        </div>
+        <h4 *ngIf="visible">
+            <p class="puntuacion"> {{puntos}}</p>
+        </h4>
+
     </div>
 
+    <div class="col-md-4">
+        <h3><b>Ranking</b></h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Jugador</td>
+                    <td>Puntos</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of ranking | keyvalue: keyDescOrder">
+                    <td>{{item.key}}</td>
+                    <td> {{item.value}}</td>
 
-    <!--cierre row-->
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
 
 </div>
+<!--cierre row-->
+
 <div class="row">
     <div class="col-md-4">
-        <div *ngIf="visible">
-            <button (click)="contarClicks()" id="boton">Haz click</button>
-        </div>
+
     </div>
-    <div class="col">Puntuación {{puntos}}</div>
-    <div class="col">
-        <h3>Ranking</h3>
-        {{ranking}}
-    </div>
+
+
+
+
 </div>
