@@ -13,10 +13,20 @@
 
 
     <hr>
-    <input type="search" [(ngModel)]="busqueda" class="form-control" placeholder="Buscar por nombre">
+    <input type="search" [(ngModel)]="busqueda" class="form-control mb-4" placeholder="Buscar por nombre">
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Elige el tipo:</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+            <option *ngFor="let animal of animales | animalesFiltro : tipo">
+                {{animal.tipo}}
+            </option>
+
+        </select>
+    </div>
 
     <ul class="list-group">
-        <li *ngFor="let animal of animales | animalesFiltro : busqueda " class="list-group-item">
+        <li *ngFor="let animal of animales | animalesFiltro : busqueda : tipo " class="list-group-item">
             <img src="{{animal.Imagen}}" class="circle" alt=""><span></span>
             <div>
                 <p class="nombre">{{animal.Nombre}}</p>
