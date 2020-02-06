@@ -7,9 +7,18 @@
 
     </div>
 </div><!-- Cierre row-->
-<div class="row">
+<div class="row mb-2">
     <div class="col-md-6 offset-md-6">
-        <input class="form-control" type="text" placeholder="Busca receta por nombre, cocinero o ingredientes">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Busca receta por nombre, cocinero o ingredientes">
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2"> <span class="fas fa-search"></span></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-1">
+
     </div>
 
 </div><!-- Cierre row-->
@@ -18,10 +27,58 @@
     <!--Seccion lista-->
     <div class="col-md-4">
         <h5>Recetario</h5>
+        <ul class="list-group">
+            <li *ngFor="let r of recetas" (click)="seleccionarReceta(r)"
+                class="list-group-item {{(r==rSeleccionada)?'active':''}} listado">
+                <div class="nombreReceta">{{r.nombre}}</div>
+                <span
+                    class="iconoGluten fas fa-exclamation-circle {{(!r.isGlutenFree)?'text-success':'text-danger'}}"></span>
+                <div class=" text-muted nombreCocinero">{{r.cocinero}}</div>
+            </li>
 
+        </ul>
     </div>
     <!--Seccion detalle-->
     <div class="col-md-8">
+        <div class="fichaReceta">
+            <h3>{{rSeleccionada.nombre}}</h3>
+            <div class="row pl-4 pr-4">
+                <div class="col-md-5">
+                    <div class="bordeImagen">
+                        <img class="img-fluid bordeImagen " src="{{rSeleccionada.foto}}"
+                            alt="imagen de {{rSeleccionada.nombre}}">
+                        <span class="iconoGluten {{(!rSeleccionada.isGlutenFree)?'text-success':'text-danger'}}"><i
+                                class="fas fa-exclamation-circle "></i></span>
+                    </div>
+                    <div class="corazon-cocinero">
+                        <p> <i class="fas fa-heart mt-3 ">{{rSeleccionada.likes}}</i>
+                            <span class="nombre">By {{rSeleccionada.cocinero}}</span>
+                        </p>
+                    </div>
+                </div>
+                <!--Cierre col-md-4-->
+                <div class="col-md-7">
+                    <h4>Ingredientes</h4>
+                    <ul class="list-group">
+                        <li *ngFor="let i of rSeleccionada.ingredientes" class="list-group-item">
+                            {{i}}
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!--Cierre col-md-8-->
+            </div>
+            <!--Cierre row-->
+            <div class="row pl-4 pr-4">
+                <div class="col-lg-12">
+                    <p>{{rSeleccionada.descripcion}}</p>
+                </div>
+            </div>
+            <!--Cierre row-->
+
+        </div>
+        <!--Cierre ficha receta-->
 
     </div>
 </div><!-- Cierre row-->

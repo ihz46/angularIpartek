@@ -1,0 +1,72 @@
+.listado{
+    position: relative;
+
+    .nombreReceta{
+      font-weight: 600;
+      display:flex;
+      flex-wrap: nowrap;
+    }
+
+    .nombreCocinero{
+        font-style: italic;
+    }
+
+    .iconoGluten{
+         position: absolute;
+         top:6px;
+         right:6px;
+         font-size:2rem;
+    }
+}
+
+.fichaReceta{
+    position:relative;
+    border-left: 1px solid #F9F871;
+    margin:2px;
+
+    h3{
+        background-color:#F9F871;
+    }
+
+    img{
+        border:2px solid white;
+        
+        }
+
+    .bordeImagen{
+        border: 2px solid rgb(172, 160, 160);
+        border-radius: 10px;
+        box-sizing:border-box;
+        position:relative;
+
+        .iconoGluten{
+            position: absolute;
+            top:6px;
+            right:6px;
+            font-size:2rem;
+       }
+    }
+
+    .corazon-cocinero{
+        position:relative;
+        color:red;
+
+        .nombre{
+            color: black;
+            position:absolute;
+            right:4px;
+            top:12px;
+            font-style: italic;
+        }
+
+       
+    }
+}
+
+//Sobreescribimos de bootstrap
+
+//Active al hacer click
+.list-group-item.active{
+    background-color:#ff5318ba;
+}
+
