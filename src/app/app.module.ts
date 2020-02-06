@@ -19,6 +19,7 @@ import { FiltrosComponent } from './paginas/filtros/filtros.component';
 import { HelloDirective } from './directives/hello.directive';
 import { SubrayadoDirective } from './directives/subrayado.directive';
 import { AnimalesPipe } from './pipes/animales.pipe';
+import { RecetarioComponent } from './paginas/recetario/recetario.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { AnimalesPipe } from './pipes/animales.pipe';
     HelloDirective,
     SubrayadoDirective,
     AnimalesPipe,
+    RecetarioComponent,
 
   ],
   imports: [

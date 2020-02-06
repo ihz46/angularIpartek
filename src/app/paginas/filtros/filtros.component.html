@@ -1,40 +1,41 @@
-<h2>{{'Filtros' | uppercase</h2>
+<h2>{{ 'Filtros' | uppercase }}</h2>
 <h3>Ejemplos de filtros de angular</h3>
 <a href="https://angular.io/api?query=pipe" target="_blank">Documentación oficial</a>
 
 <pre>{{coche | json}}</pre>
-    <p>{{coche.nombre | uppercase}}</p>
-    <p>{{coche.color | lowercase}}</p>
-    <p>{{coche.precio | currency : 'EUR': '':'2.2-2'}} €</p>
-    <p>{{coche.nombre | slice : 0 : 5}} </p>
-    <p>{{coche.nombre | slice : 6 : 9}} </p>
+<p>{{coche.nombre | uppercase}}</p>
+<p>{{coche.color | lowercase}}</p>
+<p>{{coche.precio | currency : 'EUR': '':'2.2-2'}} €</p>
+<p>{{coche.nombre | slice : 0 : 5}} </p>
+<p>{{coche.nombre | slice : 6 : 9}} </p>
 
-    <h2>Filtrando listas</h2>
+<h2>Filtrando listas</h2>
 
 
-    <hr>
-    <input type="search" [(ngModel)]="busqueda" class="form-control mb-4" placeholder="Buscar por nombre">
+<hr>
+<input type="search" [(ngModel)]="busqueda" class="form-control mb-4" placeholder="Buscar por nombre">
 
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Elige el tipo:</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-            <option *ngFor="let animal of animales | animalesFiltro : tipo">
-                {{animal.tipo}}
-            </option>
+<div class="form-group">
+    <label for="exampleFormControlSelect1">Elige el tipo:</label>
+    <select class="form-control" [(ngModel)]="tipo" id="exampleFormControlSelect1">
+        <option selected>Todos</option>
+        <option *ngFor="let t of tipos">
+            {{t}}
+        </option>
 
-        </select>
-    </div>
+    </select>
+</div>
 
-    <ul class="list-group">
-        <li *ngFor="let animal of animales | animalesFiltro : busqueda : tipo " class="list-group-item">
-            <img src="{{animal.Imagen}}" class="circle" alt=""><span></span>
-            <div>
-                <p class="nombre">{{animal.Nombre}}</p>
-                <p class="observacion">{{animal.Observacion}}</p>
-            </div>
+<ul class="list-group">
+    <li *ngFor="let animal of animales | animalesFiltro : busqueda : tipo " class="list-group-item">
+        <img src="{{animal.Imagen}}" class="circle" alt=""><span></span>
+        <div>
+            <p class="nombre">{{animal.Nombre}}</p>
+            <p class="observacion">{{animal.Observacion}}</p>
+        </div>
 
-        </li>
+    </li>
 
-    </ul>
+</ul>
 
-    <h3>Custom Filter</h3>
+<h3>Custom Filter</h3>
