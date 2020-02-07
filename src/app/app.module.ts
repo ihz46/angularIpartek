@@ -20,6 +20,7 @@ import { HelloDirective } from './directives/hello.directive';
 import { SubrayadoDirective } from './directives/subrayado.directive';
 import { AnimalesPipe } from './pipes/animales.pipe';
 import { RecetarioComponent } from './paginas/recetario/recetario.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { RecetarioComponent } from './paginas/recetario/recetario.component';
     SubrayadoDirective,
     AnimalesPipe,
     RecetarioComponent,
+    FooterComponent,
 
   ],
   imports: [

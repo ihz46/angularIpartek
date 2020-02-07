@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GLOBAL } from './global';
 
 /*
  * Componente principal que se carga al arrancar la aplicación
@@ -17,9 +18,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  title: string;
 
-  //Variable
-  title = 'Welcome to THE HELL';
+
+  constructor() {
+    this.title = 'ANGULAR App';
+
+  }//Fin constructor
+
+
 
   //Creamos un array con un JSON
   productos = [{

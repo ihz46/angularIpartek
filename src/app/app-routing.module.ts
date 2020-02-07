@@ -25,8 +25,8 @@ const routes: Routes = [
   { path: 'juego', component: JuegoComponent },
   { path: 'directivas', component: DirectivasComponent },
   { path: 'filtros', component: FiltrosComponent },
-  { path: 'recetario', component: RecetarioComponent }
-
+  { path: 'recetario', component: RecetarioComponent },
+  { path: '*', component: InicioComponent }
 ];
 
 @NgModule({
