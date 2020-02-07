@@ -34,6 +34,10 @@ export const RUTAS = [
     {
         "enlace": "/recetario",
         "nombre": "Recetario"
+    },
+    {
+        "enlace": "/saludar/:pNombre",
+        "nombre": "Saludar"
     }
 
 ]
