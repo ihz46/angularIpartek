@@ -10,8 +10,12 @@ export class RecetarioComponent implements OnInit {
   recetas: Array<any>;
   rSeleccionada: Array<any>;
   ingredientes: Array<string>;
+  checkGluten: boolean;
+  busqueda: any;
 
   constructor() {
+    this.busqueda = '';
+    this.checkGluten = false;
     this.recetas = RECETAS;
     this.rSeleccionada = this.recetas[0];
 

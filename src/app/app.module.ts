@@ -21,6 +21,7 @@ import { SubrayadoDirective } from './directives/subrayado.directive';
 import { AnimalesPipe } from './pipes/animales.pipe';
 import { RecetarioComponent } from './paginas/recetario/recetario.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { RecetaFilterPipe } from './pipes/receta-filter.pipe';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
     AnimalesPipe,
     RecetarioComponent,
     FooterComponent,
+    RecetaFilterPipe,
 
   ],
   imports: [
