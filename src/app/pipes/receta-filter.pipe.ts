@@ -32,9 +32,11 @@ export class RecetaFilterPipe implements PipeTransform {
 
         //Guardamos los ingredientes concatenados, en caso de que no haya ninguno lo inicialicamos en vacío para evitar undefined
         const ingredientes = el.ingredientes.reduce((c, p) => c + p, '');
+        console.debug(ingredientes);
 
         //Unimos el nombre de la receta, el cocinero y los ingredientes.
         const encontrar = (el.nombre + el.cocinero + ingredientes).toLowerCase();
+        console.debug(encontrar);
 
         //Buscamos en el churro trozos que contengan el parámetro de búsqueda
         return encontrar.includes(busqueda);

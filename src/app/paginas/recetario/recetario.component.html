@@ -33,7 +33,7 @@
                 class="list-group-item {{(r==rSeleccionada)?'active':''}} listado">
                 <div class="nombreReceta">{{r.nombre}}</div>
                 <span
-                    class="iconoGluten fas fa-exclamation-circle {{(!r.isGlutenFree)?'text-success':'text-danger'}}"></span>
+                    class="iconoGluten fas fa-exclamation-circle {{(r.isGlutenFree)?'text-success':'text-danger'}}"></span>
                 <div class=" text-muted nombreCocinero">{{r.cocinero}}</div>
             </li>
 
