@@ -11,6 +11,7 @@ import { FiltrosComponent } from './paginas/filtros/filtros.component';
 import { RecetarioComponent } from './paginas/recetario/recetario.component';
 import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
+import { TareasComponent } from './paginas/tareas/tareas.component';
 
 
 /**
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'filtros', component: FiltrosComponent },
   { path: 'recetario', component: RecetarioComponent },
   { path: 'saludar/:pNombre', component: SaludarComponent }, //Los dos puntos indican que es un parametro
+  { path: 'tareas', component: TareasComponent },
   { path: '**', component: Error404Component }
 ];
 

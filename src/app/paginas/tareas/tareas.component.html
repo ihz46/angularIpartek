@@ -1,0 +1,38 @@
+<h1>Tareas</h1>
+<p>Ejemplo de Provider o Servicio para hacer un CRUD completo, contra un servicio REST</p>
+
+<h2>Crear tarea</h2>
+
+<div *ngIf="isVisible" class="alerta alert-{{(isDanger)?'danger':'primary'}}" role="alert">
+    <p>{{mensaje}}</p>
+</div>
+
+<div class="fondo ">
+    <div class="row d-flex justify-content-center">
+        <div class="col-4 xs-1 ">
+            <div class="form-group">
+                <label class="tituloTarea">Título</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control mb-4" placeholder="Título" value="{{tarea.titulo}}"
+                        [(ngModel)]="tituloNuevo">
+                    <div class="input-group-append">
+                        <span class="input-group-text fas fa-plus-square" (click)="crearTarea(nombre)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-6 xs-1">
+            <ul class="list-group just">
+                <li class="list-group-item" (click)="mostrarTarea()" *ngFor="let tarea of tareas">
+                    <input type="checkbox" class="form-check-input mr-2" [checked]="tarea.completada"
+                        (click)="editarEstado(tarea)">
+                    <b>{{tarea.id}}</b>
+                    <span class="titulo {{(tarea.completada)?'completada':''}}">{{tarea.titulo | titlecase }}</span>
+                    <button class="far fa-trash-alt ml-2 " (click)=" eliminarTarea(tarea)"></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

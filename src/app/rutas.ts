@@ -38,6 +38,11 @@ export const RUTAS = [
     {
         "enlace": "/saludar/:pNombre",
         "nombre": "Saludar"
+    },
+    {
+        "enlace": "/tareas",
+        "nombre": "Tareas"
     }
+
 
 ]
