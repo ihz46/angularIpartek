@@ -12,6 +12,9 @@ import { RecetarioComponent } from './paginas/recetario/recetario.component';
 import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { TareasComponent } from './paginas/tareas/tareas.component';
+import { BackofficeComponent } from './paginas/backoffice/backoffice.component';
+import { LoginGuard } from './guards/login.guard';
+import { LoginComponent } from './paginas/login/login.component';
 
 
 /**
@@ -31,6 +34,10 @@ const routes: Routes = [
   { path: 'recetario', component: RecetarioComponent },
   { path: 'saludar/:pNombre', component: SaludarComponent }, //Los dos puntos indican que es un parametro
   { path: 'tareas', component: TareasComponent },
+  //We´re going to protect this route with a GUARD
+  { path: 'backoffice', component: BackofficeComponent, canActivate: [LoginGuard] },
+  { path: 'login', component: LoginComponent },
+
   { path: '**', component: Error404Component }
 ];
 

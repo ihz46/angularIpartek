@@ -1,0 +1,38 @@
+<h1>REACTIVE FORMS</h1>
+<p class="text-danger">Acordarse de importar <code>ReactiveFormsModule</code> en app.module.ts</p>
+
+<ul class="list group">
+    <li class="list-group-item">MUY IMPORTANTE: en el app.module.ts debemos importar el módulo de reactive forms module
+    </li>
+    <li class="list-group-item">Debemos de crear una variable de tipo FormGroup: la variable se va a llamar formulario:
+        FormGroup</li>
+    <li class="list-group-item">Debemos de inyectar en el constructor, el form builder.</li>
+    <li class="list-group-item">Meter en la etiqueta form [formControl]=”NombreFormulario”, en nuestro caso FormGroup.
+    </li>
+    <li class="list-group-item">Enviar formulario: (ngSubmit)=”método(formulario.value)”</li>
+</ul>
+
+<div class="row">
+    <div class="col">
+        <form action="login" [formGroup]="formulario" (ngSubmit)="enviar(formulario.value)">
+
+            <div class="form-group  text-center">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" formControlName="nombre" placeholder="nombre" autofocus>
+            </div>
+            <div class="form-group text-center">
+                <label for="password">Contraseña:</label>
+                <input type="password" formControlName="password" placeholder="password" class="form-control">
+            </div>
+            <button type="submit" [disabled]="formulario.invalid" class="btn btn-primary btn-block">Enviar</button>
+        </form>
+    </div>
+    <!--Cierre col 1-->
+    <div class="col">
+        <pre>{{formulario.value|json}}</pre>
+        <pre>{{formulario.status|json}}</pre>
+    </div>
+    <!--Cierre col 2-->
+
+
+</div>

@@ -11,7 +11,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { ProductosComponent } from './paginas/productos/productos.component';
 import { InicioComponent } from './paginas/inicio/inicio.component';
 import { PokemonRestComponent } from './paginas/pokemon-rest/pokemon-rest.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EstilosComponent } from './paginas/estilos/estilos.component';
 import { JuegoComponent } from './paginas/juego/juego.component';
 import { DirectivasComponent } from './paginas/directivas/directivas.component';
@@ -25,6 +25,8 @@ import { RecetaFilterPipe } from './pipes/receta-filter.pipe';
 import { Error404Component } from './paginas/error404/error404.component';
 import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { TareasComponent } from './paginas/tareas/tareas.component';
+import { BackofficeComponent } from './paginas/backoffice/backoffice.component';
+import { LoginComponent } from './paginas/login/login.component';
 
 
 @NgModule({
@@ -50,14 +52,16 @@ import { TareasComponent } from './paginas/tareas/tareas.component';
     Error404Component,
     SaludarComponent,
     TareasComponent,
+    BackofficeComponent,
+    LoginComponent,
 
   ],
   imports: [
     BrowserModule,
     HttpClientModule, //Módulo para llamadas por HTTP
     AppRoutingModule,
-    FormsModule //Módulo para utilizar formularios
-
+    FormsModule, //Módulo para utilizar formularios
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
