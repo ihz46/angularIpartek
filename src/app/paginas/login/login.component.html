@@ -19,11 +19,23 @@
             <div class="form-group  text-center">
                 <label for="nombre">Nombre:</label>
                 <input type="text" class="form-control" formControlName="nombre" placeholder="nombre" autofocus>
+
+                <small *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.dirty"
+                    class="text-danger mb-2">Mínimo 2 carácteres, máximo 100</small>
+                <small *ngIf="formulario.controls.nombre.valid " class="text-success mb-2">Nombre correcto</small>
             </div>
+            <!--CIERRE NOMBRE-->
+
             <div class="form-group text-center">
                 <label for="password">Contraseña:</label>
                 <input type="password" formControlName="password" placeholder="password" class="form-control">
+                <small *ngIf="formulario.controls.password.invalid && formulario.controls.password.dirty"
+                    class="text-danger mb-2">Mínimo
+                    6 carácteres, máximo 8</small>
+                <small *ngIf="formulario.controls.password.valid " class="text-success mb-2">Contraseña correcta</small>
             </div>
+
+
             <button type="submit" [disabled]="formulario.invalid" class="btn btn-primary btn-block">Enviar</button>
         </form>
     </div>
@@ -31,6 +43,16 @@
     <div class="col">
         <pre>{{formulario.value|json}}</pre>
         <pre>{{formulario.status|json}}</pre>
+
+        <h3>FormControl</h3>
+        <a href="https://angular.io/api/forms/FormControl" target="_blank">Documentación</a>
+        <pre>valid: {{ formulario.controls.password.valid | json }}</pre>
+        <pre>invalid: {{ formulario.controls.password.invalid | json }}</pre>
+        <pre>dirty: {{ formulario.controls.password.dirty | json }}</pre>
+        <pre>pristine: {{ formulario.controls.password.pristine | json }}</pre>
+        <pre>touched: {{ formulario.controls.password.touched | json }}</pre>
+        <pre>untouched: {{ formulario.controls.password.untouched | json }}</pre>
+        <pre>Errors: {{ formulario.controls.password.errors | json }}</pre>
     </div>
     <!--Cierre col 2-->
 
