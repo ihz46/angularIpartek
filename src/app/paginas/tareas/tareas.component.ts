@@ -18,9 +18,8 @@ export class TareasComponent implements OnInit {
   mensaje: string;
   isDanger: boolean;
 
-  //visibilidad formulario
-  isVisibleInput: boolean;
-
+  //visibilidad edición
+  modoEdicion: boolean;
 
   //Hay que pasarle al constructor el service
   constructor(private servicioTarea: TareasService) {
@@ -34,6 +33,9 @@ export class TareasComponent implements OnInit {
     this.isVisible = false;
     this.mensaje = '';
     this.isDanger = false;
+
+    //Modo edición
+    this.modoEdicion = false;
 
   }//constructor
 
@@ -65,7 +67,14 @@ export class TareasComponent implements OnInit {
     this.servicioTarea.listar().subscribe(datos => {
       console.debug('Esto se ejecuta de forma asíncrona');
       this.tareas = datos;
-    });
+    },
+      error => {
+        console.warn('Servicio REST no funciona');
+        this.isVisible = true;
+        this.isDanger = true;
+        this.mensaje = 'El servicio REST no funciona, arrancalo';
+
+      });
   }//cargarTareas
 
   /**
@@ -77,8 +86,8 @@ export class TareasComponent implements OnInit {
     let tNueva = new Tarea();
     tNueva.titulo = this.tituloNuevo;
     console.debug(tNueva);
-    if (this.tituloNuevo.length < 1) {
-      this.mensaje = "No es posible crear una tarea sin título";
+    if (this.tituloNuevo.length < 1 && this.tituloNuevo.trim().length < 1) {
+      this.mensaje = "Debes de crear una tarea más larga";
       this.isVisible = true;
       this.isDanger = true;
     } else {
@@ -103,20 +112,23 @@ export class TareasComponent implements OnInit {
     if (opcion) {
       console.debug('Se ha eliminado la tarea');
       this.tareaEliminada = tarea;
-      this.servicioTarea.eliminar(tarea.id).subscribe(() => this.cargarTareas());
-      this.isVisible = true;
-      this.isDanger = true;
-      this.mensaje = 'Se ha eliminado correctamente la tarea ' + tarea.id + ' -' + tarea.titulo;
+      this.servicioTarea.eliminar(tarea.id).subscribe(() => {
+        this.isVisible = true;
+        this.isDanger = true;
+        this.mensaje = `Eliminada [${tarea.id}] ${tarea.titulo}`;
+        this.cargarTareas();
+      });
+
 
     } else {
       console.debug('No se ha eliminado');
     }
   }//confirmar
 
-  mostrarTarea() {
-    console.trace('mostrarTarea');
+  cambiarTitulo(tarea: Tarea): void {
+    console.debug('Perdemos el focus para cambiar titulo %o', tarea);
+    this.servicioTarea.modificar(tarea).subscribe(() => this.cargarTareas());
 
-    this.tituloNuevo = this.tituloNuevo;
-  }//mostrarTarea
+  }// cambiarTitulo
 
 }//TareasComponent

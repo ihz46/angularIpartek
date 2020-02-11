@@ -4,6 +4,8 @@ body{
     background-position: center;
 }
 li{
+    position:relative;
+
     span.titulo{
 
         font-weight: 500;
@@ -15,6 +17,26 @@ li{
         font-weight: 100;
         color:#c5b7b78e(128, 122, 122);
     }
+
+    input[type="checkbox"] {
+        width: 30px;
+        height: 39px;
+        margin:10px;
+        display:inline-block;
+        position: absolute;
+        top: -6px;
+        left: 2px;
+    }  
+
+    input[type="text"] {
+       display:inline-block;
+       margin:10px;
+       position: absolute;
+       left: 40px;
+       top: -6px;
+
+       
+    }    
 
     
 }
