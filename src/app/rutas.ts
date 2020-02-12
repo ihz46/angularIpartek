@@ -42,14 +42,6 @@ export const RUTAS = [
     {
         "enlace": "/tareas",
         "nombre": "Tareas"
-    },
-    {
-        "enlace": "/backoffice",
-        "nombre": "Backoffice"
-    },
-    {
-        "enlace": "/login",
-        "nombre": "Iniciar Sesión"
     }
 
 

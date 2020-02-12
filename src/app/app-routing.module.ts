@@ -37,7 +37,6 @@ const routes: Routes = [
   //We´re going to protect this route with a GUARD
   { path: 'backoffice', component: BackofficeComponent, canActivate: [LoginGuard] },
   { path: 'login', component: LoginComponent },
-
   { path: '**', component: Error404Component }
 ];
 

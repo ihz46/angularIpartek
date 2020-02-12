@@ -6,6 +6,7 @@ import { Usuario } from '../model/usuario';
   providedIn: 'root'
 })
 export class UsuarioService implements IusuarioService {
+
   isLogged: boolean;
   usuario: Usuario;
 
@@ -20,17 +21,22 @@ export class UsuarioService implements IusuarioService {
     return this.isLogged;
   }//isLogueado()
 
-  login(nombre: string, password: string): Usuario {
-    console.trace('UsuarioService login nombre %s password %s', nombre, password);
+  login(nombre: string, pass: string): Usuario {
+    console.trace('UsuarioService login nombre %s password %s', nombre, pass);
     const NOMBRE = 'admin';
-    const PASS = 'admin';
+    const PASS = 'admin123';
+    let usuarioBuscar: Usuario;
 
-    if (NOMBRE == nombre && PASS == password) {
+    if (NOMBRE == nombre && PASS == pass) {
       //usuario logueado
       console.log('usuario logueado');
-      this.usuario.id = 99;
-      this.usuario.nombre = NOMBRE;
-      this.usuario.password = PASS;
+      //crear usuario
+      usuarioBuscar = new Usuario();
+      usuarioBuscar.id = 99;
+      usuarioBuscar.nombre = nombre;
+      usuarioBuscar.password = pass;
+      console.log('usuario logueado %o', usuarioBuscar);
+      //indicamos que esta logueado
       this.isLogged = true;
     } else {
       //Usuario no logueado
@@ -38,13 +44,18 @@ export class UsuarioService implements IusuarioService {
       this.isLogged = false;
     }
 
-    return this.usuario;
+    return usuarioBuscar;
   }//login
 
   logout(id: number) {
     console.trace('logout');
     this.isLogged = false;
   }//logout
+
+  cerrarSesion() {
+    console.trace('UsuarioService cerrarSesion');
+    this.isLogged = false;
+  }
 
 
 }
