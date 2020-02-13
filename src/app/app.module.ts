@@ -27,6 +27,7 @@ import { SaludarComponent } from './paginas/saludar/saludar.component';
 import { TareasComponent } from './paginas/tareas/tareas.component';
 import { BackofficeComponent } from './paginas/backoffice/backoffice.component';
 import { LoginComponent } from './paginas/login/login.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { LoginComponent } from './paginas/login/login.component';
     BrowserModule,
     HttpClientModule, //Módulo para llamadas por HTTP
     AppRoutingModule,
+    RouterModule,
     FormsModule, //Módulo para utilizar formularios
     ReactiveFormsModule
   ],

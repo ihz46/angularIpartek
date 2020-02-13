@@ -14,10 +14,12 @@ export class NavbarComponent implements OnInit {
 
   constructor(private usuarioService: UsuarioService, private router: Router) {
     this.rutas = RUTAS;
+
   }//constructor
 
   ngOnInit() {
     console.trace('NavBarComponent ngOnInit');
+
   }//ngOnInit()
 
   logout() {
