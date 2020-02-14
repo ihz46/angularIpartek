@@ -1,0 +1,10 @@
+<div class="row">
+    <!-- Insertamos el componente listado-->
+    <div class="col">
+        <app-listado [frutas]="frutas" (tomaFrutaEvento)="recogerEvento($event)"></app-listado>
+    </div>
+    <!-- Insertamos el componente detalle-->
+    <div class="col">
+        <app-detalle [fruta]="frutaSeleccionada"></app-detalle>
+    </div>
+</div>

@@ -42,6 +42,10 @@ export const RUTAS = [
     {
         "enlace": "/tareas",
         "nombre": "Tareas"
+    },
+    {
+        "enlace": "/compras",
+        "nombre": "Input/Output"
     }
 
 

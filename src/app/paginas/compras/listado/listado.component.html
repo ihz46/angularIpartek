@@ -1,0 +1,11 @@
+<ul class="list-group">
+    <!-- Comprobamos que exista alguna fruta, en caso de que no exista, se mostrará el contenido de li-->
+    <li *ngIf="frutas.length === 0" class="list-group-item">Cargando Frutas...</li>
+
+    <!-- Recorremos el array de frutas. Al hacer click en una de ellas, se pondrá la clase
+        active de bootstrap y además se enviará la fruta y un evento al método enviarFruta
+    
+    -->
+    <li *ngFor="let f of frutas" (click)="enviarFruta($event, f)"
+        class="list-group-item {{(f===frutaSeleccionada) ? 'active':''}}">{{f.nombre}}</li>
+</ul>

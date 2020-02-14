@@ -28,6 +28,9 @@ import { TareasComponent } from './paginas/tareas/tareas.component';
 import { BackofficeComponent } from './paginas/backoffice/backoffice.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { RouterModule } from '@angular/router';
+import { ComprasComponent } from './paginas/compras/compras.component';
+import { ListadoComponent } from './paginas/compras/listado/listado.component';
+import { DetalleComponent } from './paginas/compras/detalle/detalle.component';
 
 
 @NgModule({
@@ -55,6 +58,9 @@ import { RouterModule } from '@angular/router';
     TareasComponent,
     BackofficeComponent,
     LoginComponent,
+    ComprasComponent,
+    ListadoComponent,
+    DetalleComponent,
 
   ],
   imports: [

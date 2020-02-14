@@ -15,6 +15,7 @@ import { TareasComponent } from './paginas/tareas/tareas.component';
 import { BackofficeComponent } from './paginas/backoffice/backoffice.component';
 import { LoginGuard } from './guards/login.guard';
 import { LoginComponent } from './paginas/login/login.component';
+import { ComprasComponent } from './paginas/compras/compras.component';
 
 
 /**
@@ -37,6 +38,7 @@ const routes: Routes = [
   //We´re going to protect this route with a GUARD
   { path: 'backoffice', component: BackofficeComponent, canActivate: [LoginGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'compras', component: ComprasComponent },
   { path: '**', component: Error404Component }
 ];
 
